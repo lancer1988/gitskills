@@ -1,0 +1,27 @@
+From 8d60dfb840b2ae1a46fac0d18ac998049384a856 Mon Sep 17 00:00:00 2001
+From: Jinhua Huang <jinhuahuang@asrmicro.com>
+Date: Wed, 3 Feb 2021 18:40:32 +0800
+Subject: [PATCH 4/4] config/product/ASR_CRANE_EVB.json: enable secure boot
+
+Signed-off-by: Jinhua Huang <jinhuahuang@asrmicro.com>
+Change-Id: I9501a9aa697a4235aaa5d0df553ef0fc4cd28a03
+---
+ config/product/ASR_CRANE_EVB.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/config/product/ASR_CRANE_EVB.json b/config/product/ASR_CRANE_EVB.json
+index 28229dd..5a614be 100644
+--- a/config/product/ASR_CRANE_EVB.json
++++ b/config/product/ASR_CRANE_EVB.json
+@@ -13,7 +13,7 @@
+   "layout": "CRANE_SINGLE_FLASH_LAYOUT",
+   "keyAlg": "rsa",
+   "hashAlg": "sha256",
+-  "secureBoot": false,
++  "secureBoot": true,
+   "fota": [
+     "system"
+   ],
+-- 
+2.25.1
+

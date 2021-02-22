@@ -1,0 +1,57 @@
+From 9e07e0fb0cb4300ca77f485f0ea44ca515e0f8d0 Mon Sep 17 00:00:00 2001
+From: Jinhua Huang <jinhuahuang@asrmicro.com>
+Date: Tue, 2 Feb 2021 11:28:20 +0800
+Subject: [PATCH 1/4] config/template/CRANE_EVB.json: aggregate ntos public key
+ to boot33
+
+Signed-off-by: Jinhua Huang <jinhuahuang@asrmicro.com>
+Change-Id: I823a65c6565cdcad6a733ed69dfc1ba91d69edc1
+---
+ config/template/CRANE_EVB.json | 25 ++++++++++++++++++++++++-
+ 1 file changed, 24 insertions(+), 1 deletion(-)
+
+diff --git a/config/template/CRANE_EVB.json b/config/template/CRANE_EVB.json
+index 0c557b4..db46e02 100644
+--- a/config/template/CRANE_EVB.json
++++ b/config/template/CRANE_EVB.json
+@@ -347,13 +347,36 @@
+         "certOnly": true
+       }
+     },
++    {
++      "name": "ntos_pkey",
++      "image": "ntos.pkey",
++      "io": "out",
++      "format": "pkey",
++      "pkey": {
++        "name": "nt-os-key"
++      }
++    },
++    {
++      "name": "boot33_pkey",
++      "image": "boot33.pkey",
++      "io": "out",
++      "format": "aggr",
++      "aggr": [
++        {
++          "image": "boot33"
++        },
++        {
++          "image": "ntos_pkey"
++        }
++      ]
++    },
+     {
+       "name": "boot33_lzma",
+       "image": "boot33.lzma",
+       "io": "out",
+       "format": "lzma",
+       "lzma": {
+-        "image": "boot33"
++        "image": "boot33_pkey"
+       }
+     },
+     {
+-- 
+2.25.1
+

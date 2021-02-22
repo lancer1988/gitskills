@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map version="20200909">
+<operator id="default">
+</operator>
+<operator id="SAF-COM" c="63902">
+<boolean name="KEY_IMS_ENABLE_ISIM" value="false" />
+</operator>
+<operator id="CMCC">
+<string name="KEY_IMS_OPERATOR">cmcc</string>
+<string name="KEY_CONF_FACTORY_URI">sip:mmtel@conf-factory.ims.mnc000.mcc460.3gppnetwork.org</string>
+</operator>
+<operator id="CT" id="CTCC">
+<string name="KEY_IMS_OPERATOR">ctcc</string>
+<string name="KEY_XCAP_PDP_APN">ctnet</string>
+<string name="KEY_QOS_PREFERENCE">none</string>
+<integer name="KEY_IMS_SESSION_REFRESH_TIMER" value="1800" />
+</operator>
+<operator id="CUCC" id="UNICOM">
+<string name="KEY_IMS_OPERATOR">cucc</string>
+<string name="KEY_XCAP_PDP_APN">3gnet</string>
+<integer name="KEY_MTU_SIZE" value="1250" />
+<integer name="KEY_IP_PACKET_SIZE" value="1250" />
+<boolean name="KEY_XDM_APN_ENABLE" value="true" />
+<integer name="KEY_REG_RETRY_TIME_FOR_404" value="15" />
+</operator>
+</map>

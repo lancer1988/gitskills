@@ -1,0 +1,51 @@
+From eeea8f1acd37ab77508386d7e3e8560f63df6c50 Mon Sep 17 00:00:00 2001
+From: Jinhua Huang <jinhuahuang@asrmicro.com>
+Date: Tue, 2 Feb 2021 11:36:28 +0800
+Subject: [PATCH 2/4] config/template/CRANE_EVB.json: add signature for
+ updater.bin
+
+Signed-off-by: Jinhua Huang <jinhuahuang@asrmicro.com>
+Change-Id: I3c3154dffa159966b5da03a90af9bf6b9c93e1b9
+---
+ config/template/CRANE_EVB.json | 18 +++++++++++++++++-
+ 1 file changed, 17 insertions(+), 1 deletion(-)
+
+diff --git a/config/template/CRANE_EVB.json b/config/template/CRANE_EVB.json
+index db46e02..d29872d 100644
+--- a/config/template/CRANE_EVB.json
++++ b/config/template/CRANE_EVB.json
+@@ -191,7 +191,7 @@
+       "format": "raw"
+     },
+     {
+-      "name": "updater",
++      "name": "updater_bin",
+       "image": "updater.bin",
+       "io": "in",
+       "format": "raw"
+@@ -327,6 +327,22 @@
+         "certOnly": false
+       }
+     },
++    {
++      "name": "updater",
++      "image": "updater.img",
++      "io": "out",
++      "format": "fip",
++      "fip": {
++        "images": [
++          {
++            "id": "UPDATER_IMAGE_ID",
++            "image": "updater_bin"
++          }
++        ],
++        "callBoot2": false,
++        "certOnly": false
++      }
++    },
+     {
+       "name": "fwcerts",
+       "image": "fwcerts.bin",
+-- 
+2.25.1
+

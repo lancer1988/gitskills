@@ -1,0 +1,55 @@
+From f7bd22674248e0cd24b26874673fe1547e61e843 Mon Sep 17 00:00:00 2001
+From: Jinhua Huang <jinhuahuang@asrmicro.com>
+Date: Tue, 2 Feb 2021 13:55:51 +0800
+Subject: [PATCH 3/4] config/template/CRANE_EVB.json: add signature for
+ logo.bin
+
+Signed-off-by: Jinhua Huang <jinhuahuang@asrmicro.com>
+Change-Id: Ib1244aa00c3656e44f310ef0ef75bc8b242d4b30
+---
+ config/template/CRANE_EVB.json | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+
+diff --git a/config/template/CRANE_EVB.json b/config/template/CRANE_EVB.json
+index d29872d..12bd760 100644
+--- a/config/template/CRANE_EVB.json
++++ b/config/template/CRANE_EVB.json
+@@ -190,6 +190,12 @@
+       "io": "in",
+       "format": "raw"
+     },
++    {
++      "name": "logo_bin",
++      "image": "logo.bin",
++      "io": "in",
++      "format": "raw"
++    },
+     {
+       "name": "updater_bin",
+       "image": "updater.bin",
+@@ -343,6 +349,22 @@
+         "certOnly": false
+       }
+     },
++    {
++      "name": "logo",
++      "image": "logo.img",
++      "io": "out",
++      "format": "fip",
++      "fip": {
++        "images": [
++          {
++            "id": "LOGO_IMAGE_ID",
++            "image": "logo_bin"
++          }
++        ],
++        "callBoot2": false,
++        "certOnly": false
++      }
++    },
+     {
+       "name": "fwcerts",
+       "image": "fwcerts.bin",
+-- 
+2.25.1
+
